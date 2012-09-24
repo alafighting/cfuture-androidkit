@@ -379,6 +379,7 @@ public class ColorPickerDialog extends Dialog {
 			mRectBottom = mRectTop + 50;
 		}
 
+		@SuppressLint("DrawAllocation")
 		@Override
 		protected void onDraw(Canvas canvas) {
 			// 移动中心
