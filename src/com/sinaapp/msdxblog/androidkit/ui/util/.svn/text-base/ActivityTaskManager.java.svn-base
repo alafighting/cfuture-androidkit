@@ -120,10 +120,9 @@ public class ActivityTaskManager {
 		Set<String> activityNames = activityMap.keySet();
 		Activity activitySpecified = activityMap.get(nameSpecified);
 		for (String name : activityNames) {
-			if (name.equals(nameSpecified)) {
-				continue;
+			if (!name.equals(nameSpecified)) {
+				finisActivity(activityMap.get(name));
 			}
-			finisActivity(activityMap.get(name));
 		}
 		activityMap.clear();
 		activityMap.put(nameSpecified, activitySpecified);
@@ -140,11 +139,15 @@ public class ActivityTaskManager {
 		finisActivity(activity);
 	}
 
+	/**
+	 * 结束指定的Activity
+	 * 
+	 * @param activity
+	 *            指定的Activity。
+	 */
 	private final void finisActivity(Activity activity) {
-		if (activity != null) {
-			if (!activity.isFinishing()) {
-				activity.finish();
-			}
+		if (activity != null && !activity.isFinishing()) {
+			activity.finish();
 		}
 	}
 }

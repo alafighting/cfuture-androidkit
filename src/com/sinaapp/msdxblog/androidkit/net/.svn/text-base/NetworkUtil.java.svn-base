@@ -41,10 +41,7 @@ public class NetworkUtil {
 		if (connectivityManager == null) {
 			return false;
 		}
-		NetworkInfo info= connectivityManager.getActiveNetworkInfo();
-		if(info != null && info.isAvailable()) {
-			return true;
-		}
-		return false;
+		NetworkInfo info = connectivityManager.getActiveNetworkInfo();
+		return (info != null) && info.isAvailable();
 	}
 }

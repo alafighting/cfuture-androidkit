@@ -8,6 +8,8 @@
  */
 package com.sinaapp.msdxblog.androidkit.ui.util;
 
+import com.sinaapp.msdxblog.androidkit.thread.HandlerFactory;
+
 import android.content.Context;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -19,6 +21,7 @@ import android.widget.Toast;
 public abstract class DoubleClick {
 	protected Context mContext;
 	private boolean willDo;
+	private Handler mTaskHandler = null;
 	private Runnable task = new Runnable() {
 		@Override
 		public void run() {
@@ -26,8 +29,15 @@ public abstract class DoubleClick {
 		}
 	};
 
+	/**
+	 * 构造方法，创建线程并初始化Context对象。
+	 * 
+	 * @param context
+	 */
 	public DoubleClick(Context context) {
 		mContext = context;
+		mTaskHandler = HandlerFactory
+				.getNewHandlerInOtherThread("task_handler");
 	}
 
 	/**
@@ -77,10 +87,7 @@ public abstract class DoubleClick {
 	 */
 	final private void keepInDelayTime(int delayTime) {
 		willDo = true;
-		HandlerThread thread = new HandlerThread("doTask");
-		thread.start();
-		new Handler(thread.getLooper()).postDelayed(task, delayTime);
-
+		mTaskHandler.postDelayed(task, delayTime);
 	}
 
 	/**

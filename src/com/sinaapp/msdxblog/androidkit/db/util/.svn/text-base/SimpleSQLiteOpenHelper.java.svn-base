@@ -167,7 +167,7 @@ public class SimpleSQLiteOpenHelper extends SQLiteOpenHelper {
 	}
 
 	/**
-	 * 执行在构造方成初始化的sql语句。
+	 * 初始化或升级数据库时执行的SQL语句。。
 	 */
 	private void exeSqlStatementExed(SQLiteDatabase db) {
 		if (sqlStatementExed != null) {

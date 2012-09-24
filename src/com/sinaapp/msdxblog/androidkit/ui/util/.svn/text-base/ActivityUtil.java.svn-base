@@ -1,6 +1,6 @@
 /*
- * @(#)DateUtil.java		       Project:ProgramList
- * Date:2012-9-4
+ * @(#)ActivityUtil.java		       Project:com.sinaapp.msdxblog.androidkit
+ * Date:2012-9-17
  *
  * Copyright (c) 2011 CFuture09, Institute of Software, 
  * Guangdong Ocean University, Zhanjiang, GuangDong, China.
@@ -18,21 +18,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.sinaapp.msdxblog.androidkit.util;
+package com.sinaapp.msdxblog.androidkit.ui.util;
 
-import java.util.Calendar;
+import android.content.Context;
+import android.content.res.Configuration;
 
 /**
  * @author Geek_Soledad (66704238@51uc.com)
  */
-public class DateUtil {
+public class ActivityUtil {
+
 	/**
-	 * 得到当前日期是星期几。
+	 * 返回当前屏幕是否为竖屏。
 	 * 
-	 * @return 当为周日时，返回0，当为周一至周六时，则返回对应的1-6。
+	 * @param context
+	 * @return 当且仅当当前屏幕为竖屏时返回true,否则返回false。
 	 */
-	public static final int getCurrentDayOfWeek() {
-		int day = Calendar.getInstance().get(Calendar.DAY_OF_WEEK) - 1;
-		return day == 0 ? (day + 7) : day;
+	public static boolean isScreenOriatationPortrait(Context context) {
+		return context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT;
+
 	}
 }

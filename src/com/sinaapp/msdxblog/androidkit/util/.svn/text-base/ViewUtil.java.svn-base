@@ -32,8 +32,7 @@ public class ViewUtil {
 		v.buildDrawingCache(true);
 		Bitmap bitmap = v.getDrawingCache();
 		bitmap.compress(Bitmap.CompressFormat.JPEG, quality, baos);
-		byte[] picture = baos.toByteArray();
-		return picture;
+		return baos.toByteArray();
 	}
 
 	/**

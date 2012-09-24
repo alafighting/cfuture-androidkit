@@ -8,10 +8,8 @@
  */
 package com.sinaapp.msdxblog.androidkit.ui.util;
 
-
 import android.app.Activity;
 import android.content.Context;
-
 
 /**
  * 双击退出Activity的类。
@@ -47,9 +45,9 @@ public class ExitDoubleClick extends DoubleClick {
 		((Activity) mContext).finish();
 		exitDoubleClick = null;
 	}
-	
-	/* (non-Javadoc)
-	 * @see com.sinaapp.msdxblog.androidkit.util.DoubleClick#doDoubleClick(int, java.lang.String)
+
+	/**
+	 * 双击退出Activity，如果msg为null，而默认显示的提示语为"再按一次退出"。
 	 */
 	@Override
 	public void doDoubleClick(int delayTime, String msg) {
@@ -58,5 +56,4 @@ public class ExitDoubleClick extends DoubleClick {
 		}
 		super.doDoubleClick(delayTime, msg);
 	}
-
 }
