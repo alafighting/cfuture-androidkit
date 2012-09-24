@@ -62,6 +62,6 @@ class Version {
 	 * @return
 	 */
 	public static int getRevisionNumber() {
-		return 0;
+		return 1;
 	}
 }
