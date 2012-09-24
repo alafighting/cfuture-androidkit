@@ -450,8 +450,11 @@ public class ColorPickerDialog extends Dialog {
 			return true;
 		}
 
-		/* (non-Javadoc)
-		 * @see com.sinaapp.msdxblog.androidkit.graphics.ColorPickerDialog.ColorPickerView#interpRectColor(int[], float, float)
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see com.sinaapp.msdxblog.androidkit.graphics.ColorPickerDialog.
+		 * ColorPickerView#interpRectColor(int[], float, float)
 		 */
 		protected int interpRectColor(int colors[], float x, float y) {
 			int a, r, g, b, c0, c1;
@@ -597,8 +600,11 @@ public class ColorPickerDialog extends Dialog {
 			return true;
 		}
 
-		/* (non-Javadoc)
-		 * @see com.sinaapp.msdxblog.androidkit.graphics.ColorPickerDialog.ColorPickerView#interpRectColor(int[], float, float)
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see com.sinaapp.msdxblog.androidkit.graphics.ColorPickerDialog.
+		 * ColorPickerView#interpRectColor(int[], float, float)
 		 */
 		protected int interpRectColor(int colors[], float x, float y) {
 			int a, r, g, b, c0, c1;
