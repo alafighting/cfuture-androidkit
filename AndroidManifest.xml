@@ -25,7 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- 加入桔子appid -->
+        <!-- 加入桔子appid test-->
         <meta-data
             android:name="JUZI_APPID"
             android:value="4f65a55d-b9f8-4624-a933-4d1f7250b239" />
